@@ -75,13 +75,13 @@ const propiedadesArray = [
         promocion:"si"
     },
     {
-        img: "/img/casas/casa6.jpg",        
+        img: "img/casas/casa6.jpg",        
         title: "Lujosa propiedad",
         descripcion: "En el centro del barrio de devoto",
         bedrooms: "2",
         bathrooms: "12",
         area: 250,
-        price: 250.000,
+        price: 250000,
         type: "Casa",
         zone: "paternal",
         operacion:"Venta",
