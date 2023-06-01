@@ -10,8 +10,8 @@ let posts = document.getElementById("posts");
 
 
 function saludarInvitado() {
-  nombre = prompt("Ingresa tu nombre por favor ");
-  apellido = prompt("ingresa tu apellido por favor");
+  nombre = prompt("Ingresa tu nombre por favor").trim();
+  apellido = prompt("ingresa tu apellido por favor").trim();
   let usuarioInvitado = new Invitado(nombre, apellido);
   usuarioInvitado.saludar();
 }
@@ -25,14 +25,14 @@ function mostrarEmpleados() {
 
 function buscarPropiedadesConPrompt() {
 
-  let barrio = prompt("Ingresa el barrio dende deseas buscar propiedads (Te sugiero => devoto, villa del parque o paternal)").trim();
+  let barrio = prompt("Ingresa el barrio dende deseas buscar propiedads (Te sugiero => devoto, villa del parque o paternal)").toLocaleLowerCase().trim();
   let propiedadesEncontradas = propiedadesArray.filter(propiedad => propiedad.zone === barrio)
   alert(`Las propiedades que encontramos en esa ubicacion son:  ${propiedadesEncontradas.length}`);
 
   if (propiedadesEncontradas.length === 0) {
     return alert("Gracias por visitarnos");
   } else {
-    let seguir = prompt("Desea que le mostremos la descripcion (s/n)?").toLowerCase();
+    let seguir = prompt("Desea que le mostremos la descripcion (s/n)?").toLowerCase().trim();
     if (seguir === "s") {
       return mostrarPropiedadesPrompt(propiedadesEncontradas);
     } else {
@@ -51,17 +51,6 @@ function mostrarPropiedadesPrompt(propiedadesEncontradas) {
   return resultadoBusqueda;
 }
 
-
-function buscarPropiedades(e) {
-
-  let tipoOperacion = formularioBusquedaPropiedades.tipo_operacion.value;
-  let tipoPropiedad = formularioBusquedaPropiedades.tipo_propiedad.value;
-  let precioMinimo = parseInt(formularioBusquedaPropiedades.precio_minimo.value);
-  let precioMaximo = parseInt(formularioBusquedaPropiedades.precio_maximo.value);
-
-  cargarPropiedadesBuscadas(tipoOperacion, tipoPropiedad, precioMinimo, precioMaximo);
-
-}
 
 function cargarPropiedadesPromocionadas() {
   let code = ``;

@@ -242,7 +242,7 @@ const vendedoresArray = [
     },
     {
         nombre: "Daniela",
-        apellido: "Muro",
+        apellido: "Vargas",
         edad:26,
         cargo: "vendedor",
     }
